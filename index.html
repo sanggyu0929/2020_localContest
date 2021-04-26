@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>내집꾸미기</title>
+</head>
+
+<body>
+    <!--헤더영역-->
+    <header>
+        <!--네비게이션 영역-->
+        <nav>
+            <h1><img src="./src/img/logo.png" alt="로고" title="내집꾸미기"></h1>
+            <input type="checkbox" id="nav" class="hidden">
+            <label for="nav" class="nav_btn">
+                <i></i>
+                <i></i>
+                <i></i>
+            </label>
+            <div class="nav_wrap">
+                <ul>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">온라인 집들이</a></li>
+                    <li><a href="#">스토어</a></li>
+                    <li><a href="#">전문가</a></li>
+                    <li><a href="#">시공 견적</a></li>
+                </ul>
+                <div class="sign_box">
+                    <ul>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">로그인</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--네비게이션 영역 끝-->
+    </header>
+    <!--헤더 영역 끝-->
+    <div class="clear"></div>
+    <!--비주얼 이미지 슬라이드 영역-->
+    <section class="carousel">
+        <div class="txt_wrap">
+            <div class="box0">WELCOME 내집꾸미기</div>
+            <div class="box1">내집꾸미기 홈페이지에 오신 것을 환영합니다.</div>
+        </div>
+        <ul>
+            <li class="slider" id="slide1">
+                <div class="slide_btn">
+                    <a href="#slide3" class="prev_btn"></a>
+                    <a href="#slide2" class="next_btn"></a>
+                </div>
+            </li>
+            <li class="slider" id="slide2">
+                <div class="slide_btn">
+                    <a href="#slide1" class="prev_btn"></a>
+                    <a href="#slide3" class="next_btn"></a>
+                </div>
+            </li>
+            <li class="slider" id="slide3">
+                <div class="slide_btn">
+                    <a href="#slide2" class="prev_btn"></a>
+                    <a href="#slide1" class="next_btn"></a>
+                </div>
+            </li>
+        </ul>
+        <div class="icon_Scroll"></div>
+    </section>
+    <!--비주얼 이미지 슬라이드 영역 끝-->
+    <div class="clear"></div>
+    <!--집들이 영역-->
+    <section class="housewarming">
+        <h2 class="title">온라인 집들이</h2>
+        <p class="subTitle">내집꾸미기에서 온라인 집들이 해보세요! 회원님들의 시공사례를 보여드립니다.</p>
+        <div class="house_wrap">
+            <div class="houseBox">
+                <img src="./src//img/1_before.jpg" alt="before" title="before">
+                <div class="house_hover">
+                    <img src="./src//img/1_after.jpg" alt="after" title="after">
+                </div>
+            </div>   
+            <div class="houseBox">
+                <img src="./src//img/2_before.jpg" alt="before" title="before">
+                <div class="house_hover">
+                    <img src="./src//img/2_after.jpg" alt="after" title="after">
+                </div>
+            </div>
+            <div class="houseBox last">
+                <img src="./src//img/4_before.jpg" alt="before" title="before">
+                <div class="house_hover">
+                    <img src="./src//img/4_after.jpg" alt="after" title="after">
+                </div>
+            </div>
+            <div class="text_wrap">
+                <p>작성자 아이디 : user1</p>
+                평점 :
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+            </div>
+            <div class="text_wrap">
+                <p>작성자 아이디 : user1</p>
+                평점 :
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+            </div>
+            <div class="text_wrap last">
+                <p>작성자 아이디 : user1</p>
+                평점 :
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+                <img src="./src//img/rating.png" alt="평점" title="평점">
+            </div>
+        
+            <div class="clear"></div>
+            <div class="moreWrap">
+                <a href="#" class="myButton2">+ 더보기</a>
+            </div>
+        </div>
+    </section>
+    <!--집들이 영역 끝-->
+    <div class="clear"></div>
+    <!--전문가 영역-->
+    <section class="specialist">
+        <h2 class="title white">전문가</h2>
+        <p class="subTitle white">내집꾸미기의 전문가들을 소개합니다! 전문가에게 상담을 받아보세요.</p>
+        <div class="special_wrap">
+            <div class="specialCard">
+                <div class="post-it-card">
+                    <div class="face">
+                        <div class="expert">
+                            <div>
+                                <img src="./src//img/specialist1.jpg" alt="전문가1" title="전문가1" class="profile">
+                                <span>expert</span>
+                                <a href="#" class="more">ID : SPECIALIST1</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back face">
+                        <p>
+                            이름 : 전문가1<br>
+                            아이디 : specialist1
+                            <a href="#">자세히 보기</a>
+                        </p>
+                        <div class="link"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="specialCard">
+                <div class="post-it-card">
+                    <div class="face">
+                        <div class="expert">
+                            <div>
+                                <img src="./src//img/specialist2.jpg" alt="전문가2" title="전문가2" class="profile">
+                                <span>expert</span>
+                                <a href="#" class="more">ID : SPECIALIST1</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back face">
+                        <p>
+                            이름 : 전문가2<br>
+                            아이디 : specialist2
+                            <a href="#">자세히 보기</a>
+                        </p>
+                        <div class="link"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="specialCard">
+                <div class="post-it-card">
+                    <div class="face">
+                        <div class="expert">
+                            <div>
+                                <img src="./src//img/specialist3.jpg" alt="전문가3" title="전문가3" class="profile">
+                                <span>expert</span>
+                                <a href="#" class="more">ID : SPECIALIST3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back face">
+                        <p>
+                            이름 : 전문가3<br>
+                            아이디 : specialist3
+                            <a href="#">자세히 보기</a>
+                        </p>
+                        <div class="link"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="specialCard last">
+                <div class="post-it-card">
+                    <div class="face">
+                        <div class="expert">
+                            <div>
+                                <img src="./src//img/specialist4.jpg" alt="전문가4" title="전문가4" class="profile">
+                                <span>expert</span>
+                                <a href="#" class="more">ID : SPECIALIST4</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back face">
+                        <p>
+                            이름 : 전문가4<br>
+                            아이디 : specialist4
+                            <a href="#">자세히 보기</a>
+                        </p>
+                        <div class="link"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="moreWrap">
+                <a href="#" class="myButton">+ 더보기</a>
+            </div>
+        </div>
+    </section>
+    <!--전문가 영역 끝-->
+    <div class="clear"></div>
+    <!--전문가 시공 후기 영역-->
+    <section class="review">
+        <h2 class="title white">전문가 시공 후기</h2>
+        <p class="subTitle white">
+            전문가 시공 후기를 통해 전문가에게 평점을 달아주세요!
+        </p>
+        <div class="review_wrap">
+            <div class="content">
+                <div class="contentInner">
+                    <h2>제목</h2>
+                    <span></span>
+                    <ul>
+                        <li>전문가 이름 : 전문가2</li>
+                        <li>전문가 아이디 : specialist2</li>
+                        <li>작성자 이름 : 박재현</li>
+                        <li>작성자 아이디 : park</li>
+                        <li>비용 : 3,200,000</li>
+                        <li>내용 : 원하던 아이언맨 컨셉으로<br>
+                            너무 잘 꾸며주셨습니다!</li>
+                        <li>평점 : <img src="./src//img/rating.png" alt="평점" title="평점">
+                            <img src="./src//img/rating.png" alt="평점" title="평점">
+                            <img src="./src//img/rating.png" alt="평점" title="평점">
+                            <img src="./src//img/rating.png" alt="평점" title="평점">
+                            <img src="./src//img/rating.png" alt="평점" title="평점">5</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                <div class="contentInner">
+                    <h2>제목</h2>
+                    <span></span>
+                    <ul>
+                        <li>전문가 이름 : 전문가4</li>
+                        <li>전문가 아이디 : specialist4</li>
+                        <li>작성자 이름 : 김정수</li>
+                        <li>작성자 아이디 : kim</li>
+                        <li>비용 : 5,500,000</li>
+                        <li>내용 : 요구사항대로 부드러운 느낌을<br>
+                            잘 살려주셨습니다.</li>
+                        <li>평점 : <img src="./src//img/rating.png" alt="평점" title="평점">
+                            <img src="./src//img/rating.png" alt="평점" title="평점">
+                            <img src="./src//img/rating.png" alt="평점" title="평점">
+                            <img src="./src//img/rating.png" alt="평점" title="평점">4</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="moreWrap">
+                <a href="#" class="myButton">+ 더보기</a>
+            </div>
+        </div>
+    </section>
+    <!--전문가 시공 후기 영역 끝-->
+    <div class="clear"></div>
+    <!--푸터 영역-->
+    <footer>
+        <h3>Copyright (C) 2020 by MyHome Inc All Rights Reserved.</h3>
+    </footer>
+    <!--푸터 영역 끝-->
+</body>
+</html>

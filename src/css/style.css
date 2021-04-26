@@ -1,0 +1,1078 @@
+/*초기화*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+ul,
+li,
+a {
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.clear {
+    clear: both;
+}
+
+.title {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.subTitle {
+    font-size: 16px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.title.white
+{
+    color: #FFFFFF;
+}
+
+.subTitle.white
+{
+    color: #FFFFFF;
+    padding-bottom: 20px;
+}
+
+.last {
+    margin-right: 0 !important;
+}
+
+.myButton {
+    position: relative;
+    display: inline-block;
+    padding: 20px 70px;
+    border: 2px solid #03e9f4;
+    color: #03e9f4;
+    font-size: 18px;
+    font-weight: 700;
+    transition: .5s;
+    margin-top: 30px;
+    letter-spacing: 4px;
+}
+
+.myButton:hover {
+    background-color: #03e9f4;
+    color: #FFFFFF;
+    box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+}
+
+.myButton2 {
+    position: relative;
+    display: inline-block;
+    padding: 20px 70px;
+    background-color: #03e9f4;
+    color: #FFFFFF;
+    box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 50px;
+    letter-spacing: 4px;
+}
+
+
+
+.moreWrap {
+    width: 250px;
+    margin: 50px auto 0;
+}
+
+/*헤더, 네비게이션*/
+header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: rgba(0, 0, 0, .5);
+    display: block;
+}
+
+nav {
+    padding: 0 20px;
+    position: relative;
+    display: block;
+}
+
+nav h1 {
+    float: left;
+    width: 100px;
+    height: auto;
+}
+
+nav h1  img {
+    width: 100%;
+    padding: 10px 50px;
+}
+
+nav ul {
+    float: right;
+}
+
+nav ul li {
+    padding: 0 20px;
+    float: left;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+}
+
+/*모바일 버전 메뉴*/
+#nav:checked+.nav_btn {
+    transform: rotate(45deg);
+}
+
+#nav:checked+.nav_btn i {
+    background: #000000;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked+.nav_btn i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked+.nav_btn i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked~.nav_wrap {
+    right: 0;
+}
+
+#nav:checked~.nav_wrap ul 
+{
+    display: block;
+}
+
+#nav:checked~.nav_wrap ul li
+{
+    display: block;
+}
+
+#nav:checked~.nav_wrap ul li a {
+    opacity: 1;
+    transform: translateX(0);
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.sign_box ul li a {
+    color: #03e9f4;
+}
+
+/*비주얼 슬라이드 영역*/
+
+@keyframes next {
+    35% {
+        left: 0;
+    }
+
+    95% {
+        left: 100%;
+    }
+
+    98% {
+        left: 100%;
+    }
+
+    99% {
+        left: 0;
+    }
+}
+
+@keyframes prev {
+    55% {
+        left: -100%;
+    }
+
+    99% {
+        left: -200%;
+    }
+}
+
+@keyframes snap {
+    96% {
+        scroll-snap-align: center;
+    }
+
+    97% {
+        scroll-snap-align: none;
+    }
+
+    99% {
+        scroll-snap-align: none;
+    }
+
+    100% {
+        scroll-snap-align: center;
+    }
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel ul li {
+    position: relative;
+    width: 100%;
+    flex: 0 0 100%;
+    background-image: url(../img/02.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel ul li:nth-child(2) {
+    background-image: url(../img/01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel ul li:nth-child(3) {
+    background-image: url(../img/03.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide_btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}
+
+.slide_btn {
+    animation-name: next, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.slider:last-child .slide_btn {
+    animation-name: prev, snap;
+}
+
+
+.carousel:hover .slide_btn {
+    animation-name: none;
+}
+
+
+@keyframes type {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 500px;
+    }
+}
+
+@keyframes cursorblink {
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #FFFFFF;
+    }
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.carousel .txt_wrap {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 100%;
+
+    z-index: 5;
+    animation: up 1s ease-out;
+}
+
+.carousel .txt_wrap .box0 {
+    font-size: 48px;
+    font-weight: 600;
+    width: 500px;
+    color: #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #FFFFFF;
+    animation: type 5s steps(20, end), cursorblink 1s step-end infinite;
+}
+
+.carousel .txt_wrap .box1 {
+    font-size: 28px;
+    padding: 20px 0;
+    color: #FFFFFF;
+}
+
+
+
+
+/*이전 다음 버튼*/
+
+
+
+.carousel::before,
+.carousel::after,
+.prev_btn,
+.next_btn {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    border-radius: 50%;
+}
+
+.carousel::before,
+.prev_btn {
+    left: 50px;
+    top: 50%;
+}
+
+.carousel::after,
+.next_btn {
+    right: 50px;
+    top: 50%;
+}
+
+.carousel::before,
+.carousel::after {
+    content: '';
+    background-color: #333;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.carousel::before {
+    background-image: url("../img/prev_btn.png");
+    background-size: 100%;
+}
+
+.carousel::after {
+    background-image: url("../img/nextBtn.png");
+    background-size: 100%;
+}
+
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(46px);
+    }
+}
+
+.carousel .icon_Scroll,
+.icon_Scroll::before {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+}
+
+.carousel .icon_Scroll {
+    width: 40px;
+    height: 70px;
+    margin-left: -20px;
+    margin-top: 35px;
+    box-shadow: inset 0 0 0 1px #FFFFFF;
+    border-radius: 25px;
+}
+
+.carousel .icon_Scroll::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #FFFFFF;
+    margin-left: -4px;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}
+
+/*온라인 집들이 영역*/
+.housewarming {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background-color: #f0f0f0;
+}
+
+.house_wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.houseBox {
+    width: 300px;
+    height: 400px;
+    margin-top: 30px;
+    margin-right: 50px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 30px 30px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.houseBox img {
+    width: 100%;
+    height: 100%;
+}
+
+.houseBox .house_hover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.houseBox:hover .house_hover {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.text_wrap
+{
+    width: 300px;
+    margin-right: 50px;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.housewarming .moreWrap{
+    margin: 0 auto;
+}
+
+/*온라인 집들이 영역 끝*/
+
+/*전문가 영역*/
+
+.specialist {
+    width: 100%;
+    height: 700px;
+    background-color: #212121;
+    overflow: hidden;
+}
+
+.special_wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.specialCard {
+    width: 22%;
+    height: 300px;
+    float: left;
+    margin-right: 3%;
+}
+
+.post-it-card {
+    transform-style: preserve-3d;
+    transition: all 500ms linear;
+}
+
+.specialCard:hover .post-it-card {
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+.face {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+
+.back {
+    width: 260px;
+    height: 300px;
+    transform: rotateY(180deg);
+    background-color: #2f3030;
+}
+
+.back p {
+    margin-top: 100px;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.link
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 150px 0 0 200px;
+    border-color: transparent transparent transparent #f5297e;
+    z-index: -1;
+}
+
+.back p a 
+{
+    color: #FFFFFF;
+    display: block;
+    margin-top: 110px;
+    text-align: left;
+    margin-left: 0;
+}
+
+.expert {
+    position: relative;
+    overflow: hidden;
+    padding-top: 200px;
+    width: 100%;
+    border: 2px solid #1c3544;
+    text-align: left;
+    line-height: 25px;
+}
+
+.expert div {
+    width: 100%;
+    background-color: #141414;
+    padding: 20px 50px;
+    position: relative;
+}
+
+.expert div::before {
+    position: absolute;
+    content: '';
+    bottom: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 55px 0 0 400px;
+    border-color: transparent transparent transparent #141414;
+}
+
+.expert div a {
+    padding: 5px;
+    border: 1px solid #2980b9;
+    color: #2980b9;
+    font-size: 14px;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.expert span {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #2980b9;
+}
+
+.expert .profile {
+    border-radius: 50%;
+    position: absolute;
+    bottom: 90%;
+    left: 25px;
+    width: 160px;
+}
+
+/*전문가 영역 끝*/
+
+/*전문가 시공 후기 영역*/
+.review 
+{
+    width: 100%;
+    height: 750px;
+    position: relative;
+    background: url(../img/review.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.review_wrap 
+{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.review .content 
+{
+    width: 45%;
+    margin-right: 5%;
+    float: left;
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.review h2
+{
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: -3px;
+    padding-left: 15px;
+}
+.review li 
+{
+    padding-left: 15px;
+}
+
+.review span
+{
+    width: 80%;
+    display: block;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+.review li 
+{
+    line-height: 30px;
+}
+
+footer 
+{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: #111111;
+}
+
+footer h3 
+{
+    font-size: 20px;
+    text-align: center;
+    color: #aaa;
+}
+
+@media screen and (max-width: 480px) {
+    .title 
+    {
+        font-size: 33px;
+    }
+    .subTitle
+    {
+        font-size: 14px;
+    }
+
+    nav h1 img 
+    {
+        width: 70px;
+    }
+
+    .myButton
+    {
+        padding: 20px 50px;
+        border: 2px solid #03e9f4;
+        color: #03e9f4;
+        font-size: 18px;
+        font-weight: 700;
+        transition: .5s;
+        margin: 20px 22px 40px 22px;
+        letter-spacing: 4px;
+    }
+
+    .myButton2 {
+        padding: 20px 50px;
+        background-color: #03e9f4;
+        color: #FFFFFF;
+        box-shadow: 0 0 5px #03e9f4,
+            0 0 25px #03e9f4,
+            0 0 50px #03e9f4,
+            0 0 100px #03e9f4;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 40px 22px 40px 22px;
+        letter-spacing: 4px;
+    }
+
+    header
+    {
+        height: 70px;
+    }
+
+    .nav_wrap
+    {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: #222;
+        transition: all 0.2s ease;
+        
+    }
+
+    .nav_wrap ul 
+    {
+        padding: 50px 40px 0 0  ;
+        width: 100%;
+        height: 250px;
+        display: none;
+    }
+
+    .nav_wrap ul li 
+    {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: right;
+        display: none;
+    }
+
+    .nav_wrap ul li a 
+    {
+        display: none;
+        opacity: 0;
+        color: #FFFFFF;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        transition: all 0.2s ease;
+    }
+    
+    .nav_wrap ul li a:hover 
+    {
+        color: #03e9f4;
+    }
+
+    nav h1 img
+    {
+        padding: 10px 20px;
+    }
+
+    .nav_btn
+    {
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        z-index: 9999;
+        border-radius: 50%;
+    }
+
+    .nav_btn i 
+    {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #000000;
+        border-radius: 2px;
+        margin-left: 14px;
+    }
+
+    .nav_btn i:nth-child(1) 
+    {
+        margin-top: 16px;
+    }
+
+    .nav_btn i:nth-child(2)
+    {
+        margin-top: 4px;
+    }
+
+    .nav_btn i:nth-child(3) 
+    {
+        margin-top: 4px;
+    }
+/*메인 슬라이드 영역*/
+    .carousel
+    {
+        width: 100%;
+        height: 480px;
+    }
+
+    .carousel ul li 
+    {
+        position: relative;
+        width: 100%;
+        flex: 0 0 100%;
+        background-image: url("../img/02.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .carousel ul li:nth-child(2) 
+    {
+        background-image: url("../img/01.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .carousel ul li:nth-child(3) 
+    {
+        background-image: url("../img/03.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    @keyframes type {
+        0% {
+            width: 0;
+        }
+    
+        100% {
+            width: 70%;
+        }
+    }
+
+    .carousel .txt_wrap
+    {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .carousel .txt_wrap .box0
+    {
+        width: 70%;
+        font-size: 32px;
+        margin: 0 auto;
+        text-align: center;
+        
+    }
+
+    .carousel .txt_wrap .box1
+    {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .carousel::before, .prev_btn
+    {
+        left: 10px;
+    }
+
+    .carousel::after, .next_btn
+    {
+        right: 10px;
+    }
+
+/*온라인 집들이 영역*/
+    .housewarming
+    {
+        width: 100%;
+        height: 500px;
+    }
+    
+    .house_wrap
+    {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .houseBox
+    {
+        margin: 0;
+        width: 30%;
+        height: 150px;
+        margin: 0 15px 0 0;
+    }
+
+    .text_wrap
+    {
+        font-size: 12px;
+        width: 30%;
+        margin-right: 12px;
+    }
+
+    .text_wrap img 
+    {
+        width: 15px;
+    }
+/*전문가 영역*/
+    .specialist
+    {
+        width: 100%;
+        height: 100%;
+    }
+
+    .special_wrap
+    {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .specialCard
+    {
+        width: 40%;
+        height: 250px;
+        margin: 15px 20px;
+        box-shadow: none;
+    }
+
+    .expert
+    {
+        margin: 0;
+        padding-top: 150px;
+    }
+
+    .post-it-card
+    {
+        width: 100%;
+        height: 250px;
+        margin: 0 0 20px 0;
+    }
+
+    .expert div 
+    {
+        padding: 20px;
+    }
+
+    .expert div a 
+    {
+        width: 60%;
+        font-size: 12px;
+    }
+
+    .back
+    {
+        width: 167px;
+        height: 250px;
+    }
+
+    .link
+    {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 110px 0 0 100px;
+        border-color: transparent transparent transparent #f5297e;
+        z-index: -1;
+    }
+
+    .back p 
+    {
+        font-size: 18px;
+    }
+
+    .back p a 
+    {
+        color: #FFFFFF;
+        display: block;
+        margin-top: 65px;
+        text-align: left;
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    .expert .profile {         
+        bottom: 90%;
+        left: 25px;
+        width: 100px;
+    }
+
+    .specialist .moreWrap,.myButton
+    {
+        margin-top: 10px;
+    }
+
+/*전문가 시공 후기*/
+    .review
+    {
+        width: 100%;
+        height: 100%;
+    }
+
+    .review_wrap
+    {
+        width: 85%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .review .content
+    {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+
+    .contentInner
+    {
+        margin-top: 30px;
+    }
+
+    .review h1 
+    {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+/*푸터*/
+    footer h3 
+    {
+        font-size: 12px;
+    }
+}
+
